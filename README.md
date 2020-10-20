@@ -5,14 +5,14 @@
 ## Technologies
 
 * C++17
-* Qt 
+* Qt for GUI
 * MySQL Connector libarary
 
 
 ### How it will work?
 
 * Database with recipes
-* GUI interface 
+* Graphic User Interface
 * Possibility for user to add recipes from database
 * Browse already exisiting recipes from database
 * Delete recipes from database
