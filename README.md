@@ -22,12 +22,12 @@
 #### REPORT for 2020-11-03
 
 - [x] Initialize database
-- [x] Connect it to the program in C++
-- [x] Create class for recipes storage with possibility to add new one from command line (for now!)
+- [x] Installing MySQL and C++ Connector and learining how to use it
 - [x] Install Qt and try out its possibilites
 
 #### TO DO before 2020-11-17
 
 - [ ] Going thourgh tutorial about Qt
-- [ ] Create queries for searching thourgh recipes database
-- [ ] Add posibility to remove recipes by an ID from command line (for now)(?)
+- [x] Create tables in database for each of recipes category
+- [x] Expanding possibilites of information in tables (if a recipe is vegan, healthy etc.)
+- [ ] Creating a code to manage recipes database in C++
