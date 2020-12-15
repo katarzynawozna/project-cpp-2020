@@ -25,9 +25,21 @@
 - [x] Installing MySQL and C++ Connector and learining how to use it
 - [x] Install Qt and try out its possibilites
 
-#### TO DO before 2020-11-17
+#### REPORT for 2020-11-17
 
-- [ ] Going thourgh tutorial about Qt
+- [x] Going thourgh tutorial about Qt
 - [x] Create tables in database for each of recipes category
 - [x] Expanding possibilites of information in tables (if a recipe is vegan, healthy etc.)
-- [ ] Creating a code to manage recipes database in C++
+- [x] Creating a code to manage recipes database in C++
+
+#### REPORT for 2020-12-01
+
+- [x] Changing database to Sqlite
+- [x] New code for connection with database
+- [x] Improving existing code
+- [x] Still learining possibilites of Qt
+
+#### REPORT for 2020-12-15
+
+- [x] Improving functionality of managaing database via program
+- [x] Working on visual side of the program (in progress)
