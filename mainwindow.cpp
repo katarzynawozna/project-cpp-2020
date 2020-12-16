@@ -27,10 +27,10 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_add_field_button_clicked()
+void MainWindow::on_add_recipe_button_clicked()
 {
-    QString name = ui->f_name_lineEdit->text();
-    QString area = ui->f_area_lineEdit->text();
+    QString name = ui->r_name_lineEdit->text();
+    QString area = ui->r_area_lineEdit->text();
 
     if(name.isEmpty())
         {
@@ -44,7 +44,7 @@ void MainWindow::on_add_field_button_clicked()
     {
         connOpen();
         QSqlQuery query;
-        query.prepare("INSERT into fields (name, category) VALUES ('"+name+"','"+category+"')");
+        query.prepare("INSERT into recipes (name, category) VALUES ('"+name+"','"+category+"')");
         if(query.exec())
        {
            QMessageBox::information(this, tr("Yay!"), tr("Your recipie is added"));
@@ -59,8 +59,8 @@ void MainWindow::on_add_field_button_clicked()
 
 void MainWindow::on_add_description_button_clicked()
 {
-    QString name = ui->recipe_name_lineEdit->text();
-    QString power = ui->recipe_difficulty_lineEdit->text();
+    QString name = ui->r_name_lineEdit->text();
+    QString power = ui->r_difficulty_lineEdit->text();
 
     if(name.isEmpty())
         {
@@ -103,12 +103,12 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
 
 
 
-void MainWindow::on_f_edit_delete_button_clicked()
+void MainWindow::on_r_edit_delete_button_clicked()
 {
-    QString name = ui->f_edit_name_lineEdit->text();
+    QString name = ui->r_edit_name_lineEdit->text();
     connOpen();
     QSqlQuery query;
-        query.prepare("DELETE FROM fields where name='"+name+"'");
+        query.prepare("DELETE FROM recipes where name='"+name+"'");
         if(query.exec())
         {
             QMessageBox::information(this, tr("Yay"), tr("You just deleted a recipe!"));
@@ -122,24 +122,23 @@ void MainWindow::on_f_edit_delete_button_clicked()
 
 }
 
-void MainWindow::on_f_edit_save_button_clicked()
+void MainWindow::on_r_edit_save_button_clicked()
 {
-    QString base_name = ui->f_name_list->currentText();
-    QString name = ui->f_edit_name_lineEdit->text();
-    QString f_area = ui->f_edit_area_lineEdit->text();
-    QString desc = ui->f_edit_desc_lineEdit->text();
+    QString base_name = ui->r_name_list->currentText();
+    QString recipe_name = ui->r_edit_name_lineEdit->text();
+    QString r_diff = ui->r_edit_diffuclty_lineEdit->text();
 
     connOpen();
     QSqlQuery query;
-        query.prepare("UPDATE fields SET name = '"+name+"',area = '"+f_area+"', description = '"+desc+"' where name='"+base_name+"'");
+        query.prepare("UPDATE fields SET name = '"+recipe_name+"',diff = '"+r_diff+"', where name='"+name+"'");
         if(query.exec())
         {
-            QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo zmieniono"));
+            QMessageBox::information(this, tr("Yay!"), tr("You've edited your recipe"));
             loadFieldsToEditList();
         }
         else
         {
-            QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+            QMessageBox::critical(this, tr("Oops"), query.lastError().text());
         }
     connClose();
 
