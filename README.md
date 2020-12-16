@@ -6,7 +6,7 @@
 
 * C++17
 * Qt for GUI
-* MySQL Connector libarary
+* SQLite
 
 
 ### How it will work?
@@ -22,7 +22,6 @@
 #### REPORT for 2020-11-03
 
 - [x] Initialize database
-- [x] Installing MySQL and C++ Connector and learining how to use it
 - [x] Install Qt and try out its possibilites
 
 #### REPORT for 2020-11-17
