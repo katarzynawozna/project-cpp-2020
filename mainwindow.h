@@ -25,7 +25,7 @@ public:
     bool connOpen()
     {
         mydb =QSqlDatabase::addDatabase("QSQLITE");
-        mydb.setDatabaseName("Desktop/Studia/Project_CPP");
+        mydb.setDatabaseName("Desktop/Studia/Project_CPP/mydb.recipes");
 
         if (!mydb.open())
         {
